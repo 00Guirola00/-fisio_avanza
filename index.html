@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es-SV">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisio Avanza — Centro de Excelencia en Bienestar | Santa Tecla</title>
+    <meta name="description" content="Fisioterapia avanzada, Hydrafacial, masajes terapéuticos y tratamientos estéticos premium en Santa Tecla, El Salvador." />
+    
+    <link rel="icon" type="image/png" href="logo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="Fisio Avanza" class="w-16 h-16 object-contain">
+                <div>
+                    <h1 class="text-2xl font-bold text-[#0047AB] heading-font">Fisio Avanza</h1>
+                    <p class="text-sm text-gray-600 -mt-1">Centro integral de bienestar</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-lg">
+                <a href="#inicio" data-translate="navHome" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Inicio</a>
+                <a href="#servicios" data-translate="navServices" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Servicios</a>
+                <a href="#reservas" data-translate="navBook" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Reservar</a>
+                <a href="#contacto" data-translate="navContact" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Contacto</a>
+            </nav>
+
+            <!-- Language Switcher como en tu código original -->
+            <div class="lang-switch bg-white border border-gray-300 px-2 py-1.5 rounded-full shadow-sm flex">
+                <button onclick="switchLang('es')" id="btn-es"
+                        class="lang-btn active px-5 py-2 rounded-full text-sm font-semibold">ES</button>
+                <button onclick="switchLang('en')" id="btn-en"
+                        class="lang-btn px-5 py-2 rounded-full text-sm font-semibold">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero-bg h-screen flex items-center text-white relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+              <h2 data-translate="heroTitle"
+    class="text-6xl md:text-7xl font-bold leading-tight heading-font">
+    Recupera tu bienestar
+</h2>
+              <p data-translate="heroText"
+   class="text-2xl text-white/90">
+    Fisioterapia avanzada • Hydrafacial • Masajes terapéuticos
+</p>
+                <div class="flex flex-wrap gap-4">
+                   <button
+onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})"
+class="bg-white text-[#0047AB] px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition">
+
+<span data-translate="btnReserve">Reservar Cita</span>
+
+</button>
+                  <button
+onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})"
+class="border-2 border-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition">
+
+<span data-translate="btnServices">Ver Servicios</span>
+
+</button>
+                </div>
+            </div>
+            
+            <div class="hidden md:block">
+                <img src="sucursal.png" 
+                     alt="Sucursal Fisio Avanza" 
+                     class="rounded-3xl shadow-2xl">
+            </div>
+        </div>
+        
+        <!-- Floating WhatsApp -->
+        <a href="https://wa.me/50376561503" target="_blank"
+           class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition z-50 text-3xl">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+           <h2 data-translate="servicesTitle"
+class="text-5xl font-bold text-center mb-4 heading-font">
+Nuestros Servicios
+</h2>
+           <p data-translate="servicesSubtitle"
+class="text-center text-xl text-gray-600 mb-16">
+Tratamientos de vanguardia para tu salud y belleza
+</p>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="logo.png" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                       <h3 data-translate="service1Title"
+class="text-2xl font-bold mb-3">
+Hydrafacial Premium
+</h3>
+
+<p data-translate="service1Text"
+class="text-gray-600">
+Limpieza profunda, extracción y sueros revitalizantes. Piel radiante en una sola sesión.
+</p>
+                        <div class="mt-6 text-2xl font-bold text-[#23c26b]">$90 USD</div>
+                    </div>
+                </div>
+
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="logo.png" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                      <h3 data-translate="service2Title"
+class="text-2xl font-bold mb-3">
+Fisioterapia Clínica
+</h3>
+
+<p data-translate="service2Text"
+class="text-gray-600">
+Rehabilitación avanzada, alivio del dolor y recuperación funcional.
+</p>
+                        <div class="mt-6 text-2xl font-bold text-[#23c26b]">$40 - $65 USD</div>
+                    </div>
+                </div>
+
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                      <h3 data-translate="service3Title"
+class="text-2xl font-bold mb-3">
+Masaje Terapéutico
+</h3>
+
+<p data-translate="service3Text"
+class="text-gray-600">
+Relajación muscular profunda y reducción de estrés.
+</p>
+                        <div class="mt-6 text-2xl font-bold text-[#23c26b]">$35 - $55 USD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section id="reservas" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+         <h2 data-translate="bookingTitle"
+class="text-5xl font-bold text-center heading-font mb-16">
+Reserva tu Cita
+</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-3xl p-10 shadow-xl">
+                   <h3 data-translate="bookingSubtitle"
+class="text-3xl font-bold mb-6">
+Agenda en segundos
+</h3>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/tu-link-aqui" style="min-height:700px"></div>
+                </div>
+                <div>
+                   <h3 data-translate="findUs"
+class="text-3xl font-bold mb-8">
+Encuéntranos
+</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.387298765432!2d-89.28947568521453!3d13.676945990387543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f61f0f0f0f0f0f0%3A0x0!2zMTPCsDQwJzM3LjAiTiA4OcKwMTcnMTIuMCJX!5e0!3m2!1ses!2ssv!4v1234567890" width="100%" height="450" class="rounded-3xl shadow-xl" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="mt-8 text-center">
+                      <p data-translate="address"
+class="font-medium">
+7ª Calle Oriente y 11ª Avenida Norte, Casa #1<br>
+Urbanización Santa Mónica, Santa Tecla
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="bg-[#0047AB] text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="text-3xl font-bold heading-font mb-4">Fisio Avanza</h3>
+               <p data-translate="footerDescription">
+Centro integral de bienestar en Santa Tecla, El Salvador.
+</p>
+            </div>
+            <div>
+             <h4 data-translate="footerContact"
+class="font-bold mb-4">
+Contacto
+</h4>
+                <p class="mb-2">Tel: <a href="tel:+50322236665" class="hover:underline">+503 2223-6665</a></p>
+                <p>WhatsApp: 
+                    <a href="https://wa.me/50376561503" class="hover:underline">+503 7656-1503</a>
+                </p>
+            </div>
+            <div class="flex gap-6 text-4xl">
+                <a href="https://www.instagram.com/fisioavanza.sv" target="_blank"><i class="fab fa-instagram hover:text-[#23c26b] transition"></i></a>
+                <a href="https://www.facebook.com/FisioAvanza.sv" target="_blank"><i class="fab fa-facebook hover:text-[#23c26b] transition"></i></a>
+                <a href="https://tiktok.com/@fisioandmedic" target="_blank"><i class="fab fa-tiktok hover:text-[#23c26b] transition"></i></a>
+            </div>
+        </div>
+
+        <!-- Texto solicitado -->
+        <div class="text-center mt-16 pt-8 border-t border-white/20 text-sm">
+           <p data-translate="copyright">
+© 2026 Fisio Avanza • Todos los derechos reservados
+</p>
+         <p data-translate="designer">
+Diseño: <strong>@0Guirola0</strong>
+</p>
+        </div>
+    </footer>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+   <script src="script.js"></script>
+</body>
+</html>
