@@ -32,7 +32,13 @@ const translations = {
         footerContact: "Contacto",
 
         copyright: "© 2026 Fisio Avanza • Todos los derechos reservados",
-        designer: "Diseño: <strong>@0Guirola0</strong>"
+        designer: "Diseño: <strong>@0Guirola0</strong>",
+
+        // Traducciones del Banner de Cookies
+        cookieMessage: "Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra",
+        cookiePolicy: "Política de Privacidad",
+        cookieAccept: "Aceptar",
+        cookieReject: "Rechazar"
     },
 
     en: {
@@ -68,30 +74,77 @@ const translations = {
         footerContact: "Contact",
 
         copyright: "© 2026 Fisio Avanza • All Rights Reserved",
-        designer: "Design: <strong>@0Guirola0</strong>"
+        designer: "Design: <strong>@0Guirola0</strong>",
+
+        // English Cookies
+        cookieMessage: "We use cookies to improve your experience. By continuing to browse, you accept our",
+        cookiePolicy: "Privacy Policy",
+        cookieAccept: "Accept",
+        cookieReject: "Reject"
     }
 };
 
 function switchLang(lang) {
-
     document.querySelectorAll("[data-translate]").forEach(element => {
-
         const key = element.getAttribute("data-translate");
-
         if (translations[lang][key]) {
             element.innerHTML = translations[lang][key];
         }
-
     });
 
     document.getElementById("btn-es").classList.remove("active");
     document.getElementById("btn-en").classList.remove("active");
-
     document.getElementById(`btn-${lang}`).classList.add("active");
 
     document.documentElement.lang = lang;
 }
 
+// ==================== COOKIE BANNER ====================
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + "=" + value + ";path=/;expires=" + date.toUTCString();
+}
+
+function getCookie(name) {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+function acceptCookies() {
+    setCookie("cookie_consent", "accepted", 365);
+    document.getElementById("cookie-banner").classList.add("hidden");
+}
+
+function rejectCookies() {
+    setCookie("cookie_consent", "rejected", 365);
+    document.getElementById("cookie-banner").classList.add("hidden");
+}
+
+function updateCookieBannerLanguage(lang) {
+    const banner = document.getElementById("cookie-banner");
+    if (!banner) return;
+
+    banner.querySelector(".cookie-text").innerHTML = `
+        ${translations[lang].cookieMessage} 
+        <a href="politica-privacidad.html" class="text-[#0047AB] hover:underline" data-translate="cookiePolicy">${translations[lang].cookiePolicy}</a>.
+    `;
+    banner.querySelector(".btn-accept").textContent = translations[lang].cookieAccept;
+    banner.querySelector(".btn-reject").textContent = translations[lang].cookieReject;
+}
+
+// Inicialización
 document.addEventListener("DOMContentLoaded", () => {
     switchLang("es");
+
+    // Mostrar banner de cookies si no ha aceptado/rechazado antes
+    if (!getCookie("cookie_consent")) {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) {
+            banner.classList.remove("hidden");
+            updateCookieBannerLanguage("es");
+        }
+    }
 });

@@ -31,12 +31,31 @@
 
             <nav class="hidden md:flex items-center gap-8 text-lg">
                 <a href="#inicio" data-translate="navHome" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Inicio</a>
-                <a href="#servicios" data-translate="navServices" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Servicios</a>
+                
+                <!-- === SUBMENÚ SERVICIOS === -->
+                <div class="group relative">
+                    <a href="#servicios" data-translate="navServices" 
+                       class="nav-link flex items-center gap-1 text-gray-700 hover:text-[#0047AB] font-medium">
+                        Servicios
+                        <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    
+                    <div class="absolute left-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="flex flex-col">
+                            <a href="#servicios" class="submenu-link px-6 py-3 hover:bg-slate-50 text-gray-700 hover:text-[#0047AB] font-medium transition">1. Hydrafacial Premium</a>
+                            <a href="#servicios" class="submenu-link px-6 py-3 hover:bg-slate-50 text-gray-700 hover:text-[#0047AB] font-medium transition">2. Fisioterapia Clínica</a>
+                            <a href="#servicios" class="submenu-link px-6 py-3 hover:bg-slate-50 text-gray-700 hover:text-[#0047AB] font-medium transition">3. Masaje Terapéutico</a>
+                            <a href="#servicios" class="submenu-link px-6 py-3 hover:bg-slate-50 text-gray-700 hover:text-[#0047AB] font-medium transition">4. Reservado1</a>
+                            <a href="#servicios" class="submenu-link px-6 py-3 hover:bg-slate-50 text-gray-700 hover:text-[#0047AB] font-medium transition">5. Reservado2</a>
+                        </div>
+                    </div>
+                </div>
+                
                 <a href="#reservas" data-translate="navBook" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Reservar</a>
                 <a href="#contacto" data-translate="navContact" class="nav-link text-gray-700 hover:text-[#0047AB] font-medium">Contacto</a>
             </nav>
 
-            <!-- Language Switcher como en tu código original -->
+            <!-- Language Switcher -->
             <div class="lang-switch bg-white border border-gray-300 px-2 py-1.5 rounded-full shadow-sm flex">
                 <button onclick="switchLang('es')" id="btn-es"
                         class="lang-btn active px-5 py-2 rounded-full text-sm font-semibold">ES</button>
@@ -197,10 +216,7 @@ Centro integral de bienestar en Santa Tecla, El Salvador.
 </p>
             </div>
             <div>
-             <h4 data-translate="footerContact"
-class="font-bold mb-4">
-Contacto
-</h4>
+             <h4 data-translate="footerContact" class="font-bold mb-4">Contacto</h4>
                 <p class="mb-2">Tel: <a href="tel:+50322236665" class="hover:underline">+503 2223-6665</a></p>
                 <p>WhatsApp: 
                     <a href="https://wa.me/50376561503" class="hover:underline">+503 7656-1503</a>
@@ -213,16 +229,41 @@ Contacto
             </div>
         </div>
 
-        <!-- Texto solicitado -->
-        <div class="text-center mt-16 pt-8 border-t border-white/20 text-sm">
-           <p data-translate="copyright">
-© 2026 Fisio Avanza • Todos los derechos reservados
-</p>
-         <p data-translate="designer">
-Diseño: <strong>@0Guirola0</strong>
-</p>
+        <!-- Enlaces Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/20 text-sm">
+            <div class="flex flex-wrap justify-center gap-6 text-center">
+                <a href="politica-privacidad.html" class="hover:text-[#23c26b] transition">Política de Privacidad</a>
+                <a href="aviso-legal.html" class="hover:text-[#23c26b] transition">Aviso Legal</a>
+                <a href="terminos-condiciones.html" class="hover:text-[#23c26b] transition">Términos y Condiciones</a>
+                <a href="#" class="hover:text-[#23c26b] transition">© 2026 Fisio Avanza</a>
+            </div>
+            <p class="text-center mt-6 text-xs text-white/70">
+                Diseño: <strong>@0Guirola0</strong>
+            </p>
         </div>
     </footer>
+
+    <!-- === BANNER DE COOKIES (Actualizado - Solo un enlace) === -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-2xl p-4 md:p-6 z-[100] hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-sm text-gray-700 cookie-text" data-translate="cookieMessage">
+                Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra 
+                <a href="politica-privacidad.html" class="text-[#0047AB] hover:underline" data-translate="cookiePolicy">Política de Privacidad</a>.
+            </div>
+            <div class="flex gap-3">
+                <button onclick="rejectCookies()" 
+                        class="btn-reject px-6 py-2.5 text-sm font-medium border border-gray-300 rounded-xl hover:bg-gray-100 transition"
+                        data-translate="cookieReject">
+                    Rechazar
+                </button>
+                <button onclick="acceptCookies()" 
+                        class="btn-accept px-8 py-2.5 text-sm font-medium bg-[#0047AB] text-white rounded-xl hover:bg-[#003580] transition"
+                        data-translate="cookieAccept">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
    <script src="script.js"></script>
